@@ -4,7 +4,7 @@ import numpy as np
 
 def main():
     img_size = 128
-    classSize = 692
+    classSize = 2000
 
     # Loading model from .pkl
     model_file = open('model.pkl', 'rb')
