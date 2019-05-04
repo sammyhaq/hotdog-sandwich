@@ -23,7 +23,7 @@ def network(img_size):
 
     net.add(Conv2D(64, (5, 5), subsample=(2, 2), border_mode='same'))
     net.add(Flatten())
-    
+
     net.add(Dropout(0.2))
     net.add(ELU())
 
@@ -42,7 +42,6 @@ def main():
 
     # Loading Data
     print("\nImporting data..")
-    hotdog_files = ImageTools.parseImagePaths('./img/hotdog/')
     food_files = ImageTools.parseImagePaths('./img/food/')
     sandwich_files = ImageTools.parseImagePaths('./img/sandwich/')
     print("\t..done.\n")
