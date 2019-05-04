@@ -1,11 +1,10 @@
 from glob import glob
-import torch
-import ImageEditingTools
 import cv2
-
+import numpy as np
+from skimage import exposure
 
 def parseImagePaths(dir_path, file_extension='.jpg'):
-    return glob('{}*{}').format(dir_path, file_extension)
+    return glob('{}*{}'.format(dir_path, file_extension))
 
 
 def expandClass(paths, label, classSize, img_size):
@@ -22,6 +21,8 @@ def expandClass(paths, label, classSize, img_size):
         # Getting a random image and transforming..
         i = np.random.randint(0, len(paths))
         img = randomizeImg(paths[i], img_size)
+        x.append(img)
+        y.append(label)
 
     return x, y
 
@@ -49,10 +50,10 @@ def randomizeImg(img_path, img_size):
     return cv2.resize(img, (img_size, img_size))
 
 
-def greyscaleImgs(img):
+def greyscaleImgs(imgs):
     imgs = 0.2989*imgs[:,:,:,0] + 0.5870*imgs[:,:,:,1] + 0.1140*imgs[:,:,:,2]
 
-    return img
+    return imgs
 
 
 def normalizeImgs(imgs):
