@@ -19,6 +19,7 @@ def main():
     # note that the class label isn't necessary, as that is what we're trying to determine.
     print("\nGreyscaling and Normalizing Images..")
     x, _ = ImageTools.expandClass(hotdog_files, 0, classSize, img_size)
+    x = np.array(x)
     x = ImageTools.greyscaleImgs(x)
     x = ImageTools.normalizeImgs(x)
     print("\t..done.\n")
