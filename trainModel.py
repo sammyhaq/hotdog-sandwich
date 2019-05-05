@@ -37,8 +37,8 @@ def network(img_size):
 
 def main():
     img_size = 128
-    classSize = 3000
-    num_epochs = 20
+    classSize = 5000
+    num_epochs = 15 
 
     # Loading Data
     print("\nImporting data..")
