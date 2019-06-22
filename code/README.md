@@ -1,7 +1,5 @@
 # hotdog-sandwich
 ## By: Sammy Haq
-## CSC 249
-## PROJECT 5
 
 ### Dataset Links:
 - Sandwich dataset: https://www.kaggle.com/brtknr/sushisandwich/version/2
